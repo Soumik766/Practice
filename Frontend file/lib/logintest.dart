@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Logintest extends StatefulWidget {
-  const Logintest({Key? key}) : super(key: key);
+  const Logintest({super.key});
 
   @override
   _LogintestState createState() => _LogintestState();
@@ -49,8 +49,9 @@ class _LogintestState extends State<Logintest> {
                       border: OutlineInputBorder(),
                     ),
                     validator: (value) {
-                      if (value == null || value.isEmpty)
+                      if (value == null || value.isEmpty) {
                         return 'Enter your email';
+                      }
                       if (!value.contains('@')) return 'Enter a valid email';
                       return null;
                     },
@@ -64,10 +65,12 @@ class _LogintestState extends State<Logintest> {
                       border: OutlineInputBorder(),
                     ),
                     validator: (value) {
-                      if (value == null || value.isEmpty)
+                      if (value == null || value.isEmpty) {
                         return 'Enter your password';
-                      if (value.length < 6)
+                      }
+                      if (value.length < 6) {
                         return 'Password must be at least 6 characters';
+                      }
                       return null;
                     },
                   ),
